@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package parse;
+
+service Parser {
+  rpc ParseUrl (ParserRequest) returns (ParserReply);
+}
+
+message ParserRequest {
+  string url = 1;
+}
+
+message ParserReply {
+  string scheme = 1;
+  string host = 2;
+  string path = 3;
+  string query = 4;
+}
